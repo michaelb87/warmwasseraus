@@ -1,0 +1,16 @@
+[Unit]
+Description=Schaltet warmwasser aus
+
+[Service]
+Type=simple
+User=one
+Group=one
+Restart=on-failure
+Environment=MIX_ENV=prod 
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/path/to/app
+ExecStart=/usr/bin/mix run --no-halt
+
+[Install]
+WantedBy=multi-user.target
